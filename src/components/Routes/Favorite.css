@@ -1,0 +1,11 @@
+.card.data-set {
+    margin-left: 10px;
+}
+
+img.card-img-top.fav{
+    width: 319px;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: -7px;
+    height: 500px;
+}

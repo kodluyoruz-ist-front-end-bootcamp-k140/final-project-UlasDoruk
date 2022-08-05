@@ -1,0 +1,17 @@
+#searchbox {
+    margin-top: 6px;
+    margin-block-end: 10px;
+    margin-right: 10px;
+    padding: 6px;
+    border-radius: 6px;
+    width: 340px;
+    text-align: center;
+}
+
+#filtered{
+    margin-inline: 40%;
+}
+
+.card-text_2{
+    background-color: rgb(230, 237, 243);
+}

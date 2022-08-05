@@ -1,0 +1,17 @@
+button.btn.btn-secondary {
+    margin-inline: 45%;
+    position: absolute;
+    margin-top: 6px;
+    text-align: center;
+}
+
+svg.bi.bi-heart-fill {
+    margin-left: 10px;
+}
+
+.change.dark{
+    fill: black;
+}
+.change.white {
+    fill: white;
+}

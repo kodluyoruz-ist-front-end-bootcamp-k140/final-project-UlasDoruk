@@ -1,0 +1,35 @@
+#searchbox {
+    margin-top: 6px;
+    margin-block-end: 10px;
+    margin-right: 10px;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+button.btn.btn-success {
+    margin-inline: 15px;
+    /* padding-right: 10px; */
+}
+
+button.btn.btn-warning{
+    margin-right: -1200px;
+}
+
+
+input#searchbox {
+    margin-top: 6px;
+    margin-block-end: 10px;
+    margin-right: 10px;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+svg.bi.bi-film {
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 6px;
+}
+
+span.span{
+    padding-left: 5px;
+}

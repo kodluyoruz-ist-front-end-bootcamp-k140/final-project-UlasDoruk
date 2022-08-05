@@ -1,0 +1,20 @@
+.style {
+    position: absolute;
+    right: -397px;
+    margin: 0px;
+    padding: 12px;
+}
+
+.gıthub{
+    position: absolute;
+    display: block;
+    margin: -50px;
+    padding: -29px;
+    margin-left: 850px;
+}
+
+svg.bi.bi-instagram {
+    position: absolute;
+    margin-right: 310px;
+    margin-left: -50px;
+}
