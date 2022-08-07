@@ -1,12 +1,13 @@
 .card.showimg {
-    width: 350px;
-    height: 450px;
+    width: 400px;
+    height: 520px;
     margin-top: 20px;
     margin-left: 50px;
 }
 
 h1.card-title {
-    color: lightslategrey;
+    color:darkslategray;
+    text-transform: uppercase;
 }
 
 .card-body.showmovie {
@@ -15,14 +16,18 @@ h1.card-title {
 }
 
 .card.showmovie {
-    height: 500px;
+    height: 600px;
     margin-top: 20px;
-    width: 1430px;
+    width: 1480px;
     margin-inline: -3%;
+    margin-left: -90px;
+    background-color: tomato;
 }
 
-.footer {
-    margin-inline: 18%;
-    margin-top: 25px;
-    margin-right: 230px;
+.card.footer {
+    margin-top: 70px;
+    margin-inline-start: 10%;
+    margin-inline-end: 0%;
+    padding: 50px;
+    background-color: blanchedalmond;
 }

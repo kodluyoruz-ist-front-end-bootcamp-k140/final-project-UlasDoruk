@@ -1,11 +1,14 @@
 import React, { useContext,useEffect, useState } from "react";
 import Favbtn from "../Button/Favbtn";
 import FavoriteContext from "../../Context/AddFavorite";
+import ShowMovieContext from "../../Context/ShowMovie";
+import {NavLink} from "react-router-dom"
 
 function Searchbox({ placeholder, data }) {
   const [popularData, setPopularData] = useState([]);
   const [filter, setFilter] = useState("");
   const { truncateOverview } = useContext(FavoriteContext);
+  const { showMovie } = useContext(ShowMovieContext);
 
   const url =
     "https://api.themoviedb.org/4/list/8211825?page=2&api_key=fbc4b49dfdafc24534ba98c2a389e847&sort_by=vote_average.desc";
@@ -46,11 +49,15 @@ function Searchbox({ placeholder, data }) {
               return (
                 <div className="col-3" key={index}>
                   <div className="card data-set">
-                    <img
-                      className="card-img-top"
-                      src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`}
-                      alt="Card image cap"
-                    ></img>
+                    <NavLink to={`/movie/${item.id}`}>
+                      <img
+                        className="card-img-top"
+                        src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`}
+                        alt="Card image cap"
+                        onClick={()=>showMovie(item)}
+                      ></img>
+                    </NavLink>
+
                     <div className="card-body">
                       <strong>
                         <h4 className="card-title">
