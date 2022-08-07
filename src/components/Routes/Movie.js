@@ -7,7 +7,7 @@ function Movie() {
   const {movie} = useContext(ShowMovieContext)
 
   return (
-    <div className="container">
+    <div className="container showmovie">
       <div class="card showmovie">
         <img
           className="card showimg"
