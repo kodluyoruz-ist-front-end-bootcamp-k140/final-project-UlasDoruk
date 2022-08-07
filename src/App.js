@@ -12,28 +12,31 @@ import Movie from "./components/Routes/Movie";
 import Error from "./components/Routes/NotFound"
 import { Theme } from './components/Theme/Theme';
 import { AddFavorite } from './Context/AddFavorite';
+import { ShowMovie } from './Context/ShowMovie';
 
  
 function App() {
 
   return (
     <div>
-      <AddFavorite>
-        <Navbar />
-        <Theme>
-          <Routes>
-            <Route path="/" element={<Data />}></Route>
-            <Route path="/Popular" element={<Popular />}></Route>
-            <Route path="/Favorite" element={<Favorite />}></Route>
-            <Route path="/page_2" element={<Data_2 />}></Route>
-            <Route path="/page_3" element={<Data_3 />}></Route>
-            <Route path="/page_4" element={<Data_4 />}></Route>
-            <Route path="/page_5" element={<Data_5 />}></Route>
-            <Route path={"/movie"} element={<Movie/>}></Route>
-            <Route path="*" element={<Error />}></Route>
-          </Routes>
-        </Theme>
-      </AddFavorite>
+      <ShowMovie>
+        <AddFavorite>
+          <Navbar />
+          <Theme>
+            <Routes>
+              <Route path="/" element={<Data />}></Route>
+              <Route path="/Popular" element={<Popular />}></Route>
+              <Route path="/Favorite" element={<Favorite />}></Route>
+              <Route path="/page_2" element={<Data_2 />}></Route>
+              <Route path="/page_3" element={<Data_3 />}></Route>
+              <Route path="/page_4" element={<Data_4 />}></Route>
+              <Route path="/page_5" element={<Data_5 />}></Route>
+              <Route path="/movie/:id" element={<Movie />}></Route>
+              <Route path="*" element={<Error />}></Route>
+            </Routes>
+          </Theme>
+        </AddFavorite>
+      </ShowMovie>
     </div>
   );
 }

@@ -3,27 +3,26 @@ import "../Searchbox/Searchbox.css"
 import Favbtn from "../Button/Favbtn"
 import FavoriteContext from '../../Context/AddFavorite'
 import { NavLink } from 'react-router-dom'
+import ShowMovieContext from '../../Context/ShowMovie'
 
 function Searchbox({placeholder}) {
+  const [popularData, setPopularData] = useState([]);
+  const [filter, setFilter] = useState("");
+  const { addFavorite, truncateOverview} =useContext(FavoriteContext);
+  const {showMovie} = useContext(ShowMovieContext)
 
-  const [popularData,setPopularData] = useState([])
-  const [filter,setFilter] = useState("")
-  const {addFavorite,truncateOverview,favorite} =useContext(FavoriteContext)
+  const url =
+    "https://api.themoviedb.org/3/movie/popular?api_key=fbc4b49dfdafc24534ba98c2a389e847&language=en-US";
 
-  const url ="https://api.themoviedb.org/3/movie/popular?api_key=fbc4b49dfdafc24534ba98c2a389e847&language=en-US";
+  useEffect(() => {
+    loadPopular();
+  }, []);
 
-  useEffect(()=>{
-     loadPopular()
-  },[])
-
-    const loadPopular = async () => {
-      let response = await fetch(`${url}`);
-      let popular = await response.json();
-      setPopularData(popular.results);
-    };
-
-    const FındFav = favorite.find((item)=>item.id)
-    console.log(FındFav)
+  const loadPopular = async () => {
+    let response = await fetch(`${url}`);
+    let popular = await response.json();
+    setPopularData(popular.results);
+  };
 
   return (
     <form className="form-inline">
@@ -33,8 +32,8 @@ function Searchbox({placeholder}) {
         placeholder={placeholder}
         aria-label="Search"
         value={filter}
-        onChange={(event) => setFilter(event.target.value)}>
-        </input>
+        onChange={(event) => setFilter(event.target.value)}
+      ></input>
       <div className="container">
         <div className="row">
           {popularData
@@ -51,11 +50,12 @@ function Searchbox({placeholder}) {
               return (
                 <div className="col-3" key={index}>
                   <div className="card data-set">
-                    <NavLink to={"/movie/" + item.id}>
+                    <NavLink to={`/movie/${item.id}`}>
                       <img
                         className="card-img-top"
                         src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`}
                         alt="Card image cap"
+                        onClick={()=>showMovie(item)}
                       ></img>
                     </NavLink>
                     <div className="card-body">
@@ -77,9 +77,9 @@ function Searchbox({placeholder}) {
                         </p>
                       </div>
                       <div
-                        className="card-footer"
+                        className="card-footer "
                         onClick={() => addFavorite(item)}>
-                        <Favbtn/>
+                        <Favbtn />
                       </div>
                     </div>
                   </div>

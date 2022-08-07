@@ -1,0 +1,28 @@
+.card.showimg {
+    width: 350px;
+    height: 450px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+h1.card-title {
+    color: lightslategrey;
+}
+
+.card-body.showmovie {
+    position: absolute;
+    margin-left: 370px;
+}
+
+.card.showmovie {
+    height: 500px;
+    margin-top: 20px;
+    width: 1430px;
+    margin-inline: -3%;
+}
+
+.footer {
+    margin-inline: 18%;
+    margin-top: 25px;
+    margin-right: 230px;
+}

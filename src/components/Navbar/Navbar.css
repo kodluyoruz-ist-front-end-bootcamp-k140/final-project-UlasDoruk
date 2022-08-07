@@ -12,16 +12,7 @@ button.btn.btn-success {
 }
 
 button.btn.btn-warning{
-    margin-right: -1200px;
-}
-
-
-input#searchbox {
-    margin-top: 6px;
-    margin-block-end: 10px;
-    margin-right: 10px;
-    padding: 6px;
-    border-radius: 6px;
+    margin-left: 1190px;
 }
 
 svg.bi.bi-film {
