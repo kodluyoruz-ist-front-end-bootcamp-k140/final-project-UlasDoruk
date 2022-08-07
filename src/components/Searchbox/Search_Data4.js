@@ -1,5 +1,4 @@
 import React, { useContext,useEffect, useState } from "react";
-import Favbtn from "../Button/Favbtn";
 import FavoriteContext from "../../Context/AddFavorite";
 import { NavLink } from "react-router-dom";
 import ShowMovieContext from "../../Context/ShowMovie";
@@ -73,9 +72,6 @@ function Searchbox({ placeholder}) {
                         <br />
                         Vote Count : {item.vote_count}
                       </p>
-                      <div className="card-footer">
-                        <Favbtn />
-                      </div>
                     </div>
                   </div>
                 </div>

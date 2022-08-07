@@ -5,9 +5,18 @@ const FavoriteContext = createContext()
 export function AddFavorite ({children}){
 
     const [favorite,setFavorite] = useState([])
+    const [movie,setMovie]=useState([])
 
-    const addFavorite = (item)=>{
-        setFavorite((prev)=>[...prev,item])
+    const showMovie = (item)=>{
+        setMovie(item)
+    }
+
+    const addFavorite = (item,findfav)=>{
+        if(!findfav){
+            return setFavorite((favorite)=>[item,...favorite])
+        }
+        const filtered = favorite.filter((item)=>item.id !== findfav.id)
+        setFavorite(filtered)
     }
 
     const truncateOverview = (string, maxLength) => {
@@ -16,7 +25,7 @@ export function AddFavorite ({children}){
       return `${string.substring(0, maxLength)} ...`;
     };
 
-     const values = { favorite, setFavorite, addFavorite,truncateOverview};
+     const values = { favorite, setFavorite, addFavorite,truncateOverview,showMovie,movie};
 
     return(
         <FavoriteContext.Provider value={values}>

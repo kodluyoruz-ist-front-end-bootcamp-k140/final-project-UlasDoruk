@@ -1,0 +1,10 @@
+.btn.delete{
+    background-color: lightblue;
+}
+
+svg.bi.bi-x-octagon-fill {
+    margin: 1px;
+    padding: 0px;
+    margin-left: 5px;
+    margin-bottom: 4px;
+}

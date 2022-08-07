@@ -8,6 +8,7 @@
 h1.card-title {
     color:darkslategray;
     text-transform: uppercase;
+    margin-left: 100px;
 }
 
 .card-body.showmovie {
@@ -25,9 +26,15 @@ h1.card-title {
 }
 
 .card.footer {
-    margin-top: 70px;
+    margin-top: 30px;
     margin-inline-start: 10%;
     margin-inline-end: 0%;
     padding: 50px;
     background-color: blanchedalmond;
+}
+
+.favbtn {
+    width: -10px;
+    margin-top: 20px;
+    margin-left: 110px;
 }

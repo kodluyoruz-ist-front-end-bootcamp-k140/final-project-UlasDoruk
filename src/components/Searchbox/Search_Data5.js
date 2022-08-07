@@ -4,7 +4,7 @@ import FavoriteContext from "../../Context/AddFavorite";
 import { NavLink } from "react-router-dom";
 import ShowMovieContext from "../../Context/ShowMovie";
 
-function Searchbox({ placeholder, data }) {
+function Searchbox({ placeholder }) {
   const [popularData, setPopularData] = useState([]);
   const [filter, setFilter] = useState("");
   const { truncateOverview } = useContext(FavoriteContext);
@@ -73,9 +73,6 @@ function Searchbox({ placeholder, data }) {
                         <br />
                         Vote Count : {item.vote_count}
                       </p>
-                      <div className="card-footer">
-                        <Favbtn />
-                      </div>
                     </div>
                   </div>
                 </div>

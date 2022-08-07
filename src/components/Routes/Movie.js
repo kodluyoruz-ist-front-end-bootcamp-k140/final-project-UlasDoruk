@@ -1,10 +1,18 @@
 import React,{useContext} from 'react'
 import ShowMovieContext from '../../Context/ShowMovie'
 import "./Movie.css"
+import Favbtn from "../Button/Favbtn"
+import FavoriteContext from '../../Context/AddFavorite'
+import DeleteFavbtn from "../Button/DeleteFavbtn"
 
 function Movie() {
 
+  const {favorite} = useContext(FavoriteContext)
   const {movie} = useContext(ShowMovieContext)
+  const {addFavorite} = useContext(FavoriteContext)
+
+  const findfav = favorite.find((item)=>item.id === movie.id)
+  console.log(findfav)
 
   return (
     <div className="container">
@@ -15,9 +23,12 @@ function Movie() {
         ></img>
         <div class="card-body showmovie">
           <strong>
-            <h1 class="card-title" >{movie.title}</h1>
+            <h1 class="card-title">{movie.title}</h1>
           </strong>
           <h3 class="card footer">{movie.overview}</h3>
+          <div className="favbtn" onClick={() => addFavorite(movie,findfav)}>
+            {findfav ? <DeleteFavbtn/> : <Favbtn/>}
+          </div>
         </div>
       </div>
     </div>
