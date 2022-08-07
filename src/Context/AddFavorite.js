@@ -19,13 +19,18 @@ export function AddFavorite ({children}){
         setFavorite(filtered)
     }
 
+    const removefav = (x)=>{
+        const remove = favorite.filter((item)=>item.id !== x)
+        setFavorite(remove)
+    }
+
     const truncateOverview = (string, maxLength) => {
       if (!string) return null;
       if (string.length <= maxLength) return string;
       return `${string.substring(0, maxLength)} ...`;
     };
 
-     const values = { favorite, setFavorite, addFavorite,truncateOverview,showMovie,movie};
+     const values = { favorite, setFavorite, addFavorite,truncateOverview,showMovie,movie,removefav};
 
     return(
         <FavoriteContext.Provider value={values}>

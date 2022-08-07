@@ -9,14 +9,7 @@ export function ShowMovie({ children }) {
     setMovie(item);
   };
 
-  const truncateOverview = (string, maxLength) => {
-    if (!string) return null;
-    if (string.length <= maxLength) return string;
-    return `${string.substring(0, maxLength)} ...`;
-  };
-
   const values = {
-    truncateOverview,
     showMovie,
     movie
   };

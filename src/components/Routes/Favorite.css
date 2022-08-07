@@ -9,3 +9,9 @@ img.card-img-top.fav{
     padding: -7px;
     height: 500px;
 }
+
+h1.empty {
+    position: absolute;
+    margin-inline: 30%;
+    margin-top: 200px;
+}

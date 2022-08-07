@@ -7,7 +7,7 @@ import ShowMovieContext from '../../Context/ShowMovie'
 function Searchbox({placeholder}) {
   const [popularData, setPopularData] = useState([]);
   const [filter, setFilter] = useState("");
-  const { addFavorite, truncateOverview} =useContext(FavoriteContext);
+  const { truncateOverview} =useContext(FavoriteContext);
   const {showMovie} = useContext(ShowMovieContext)
 
   const url =
