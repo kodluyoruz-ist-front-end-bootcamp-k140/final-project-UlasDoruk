@@ -38,3 +38,51 @@ h1.card-title {
     margin-top: 20px;
     margin-left: 110px;
 }
+
+p.btn.btn-danger.voteaverage {
+    display: flex;
+    width: 71px;
+    position: absolute;
+    margin-inline: -18%;
+    margin-block-start: -12%;
+}
+
+p.btn.btn-success.voteaverage {
+    display: flex;
+    width: 71px;
+    position: absolute;
+    margin-inline: -18%;
+    margin-block-start: -12%;
+}
+
+svg.bi.bi-star-fill {
+    margin-left: 6px;
+    margin-top: 2px;
+}
+
+svg.bi.bi-person-fill {
+    margin-top: 4px;
+    margin-right: 10px;
+    margin-left: 12px;
+}
+
+svg.bi.bi-calendar {
+    margin-top: 3px;
+    margin-right: 16px;
+}
+
+p.btn.btn-primary.releasedate {
+    width: 160px;
+    display: flex;
+    position: absolute;
+    margin-inline: -27%;
+    margin-block-start: 36%;
+}
+
+p.btn.btn-primary.votecount {
+    width: 120px;
+    display: flex;
+    position: absolute;
+    margin-inline: -40%;
+    margin-block-start: 36%;
+}
