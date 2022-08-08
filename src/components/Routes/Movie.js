@@ -4,6 +4,7 @@ import "./Movie.css"
 import Favbtn from "../Button/Favbtn"
 import FavoriteContext from '../../Context/AddFavorite'
 import DeleteFavbtn from "../Button/DeleteFavbtn"
+import Popup from "reactjs-popup";
 
 function Movie() {
 

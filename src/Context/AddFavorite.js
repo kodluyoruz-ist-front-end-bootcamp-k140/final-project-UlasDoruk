@@ -7,10 +7,6 @@ export function AddFavorite ({children}){
     const [favorite,setFavorite] = useState([])
     const [movie,setMovie]=useState([])
 
-    const showMovie = (item)=>{
-        setMovie(item)
-    }
-
     const addFavorite = (item,findfav)=>{
         if(!findfav){
             return setFavorite((favorite)=>[item,...favorite])
@@ -30,7 +26,7 @@ export function AddFavorite ({children}){
       return `${string.substring(0, maxLength)} ...`;
     };
 
-     const values = { favorite, setFavorite, addFavorite,truncateOverview,showMovie,movie,removefav};
+     const values = { favorite, setFavorite, addFavorite,truncateOverview,removefav};
 
     return(
         <FavoriteContext.Provider value={values}>
