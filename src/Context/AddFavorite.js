@@ -1,12 +1,17 @@
-import { createContext,useState } from "react";
+import { useEffect,createContext,useState } from "react";
 
 const FavoriteContext = createContext()
 
+const defaultfavorite = JSON.parse(localStorage.getItem("favmovie")) || []; 
+
 export function AddFavorite ({children}){
 
-    const [favorite,setFavorite] = useState([])
-    const [movie,setMovie]=useState([])
+    const [favorite,setFavorite] = useState(defaultfavorite)
 
+    useEffect(()=>{
+        localStorage.setItem("favmovie",JSON.stringify(favorite))
+    },[favorite])
+ 
     const addFavorite = (item,findfav)=>{
         if(!findfav){
             return setFavorite((favorite)=>[item,...favorite])
