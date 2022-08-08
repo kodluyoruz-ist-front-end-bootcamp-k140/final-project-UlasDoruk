@@ -15,3 +15,10 @@ h1.empty {
     margin-inline: 30%;
     margin-top: 200px;
 }
+
+h1.error {
+    margin-top: 200px;
+    margin-inline: 30%;
+    position: absolute;
+    margin-left: 500px;
+}
