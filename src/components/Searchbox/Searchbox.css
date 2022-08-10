@@ -12,6 +12,33 @@
     margin-inline: 40%;
 }
 
-.card-text_2{
-    background-color: rgb(230, 237, 243);
+p.btn.btn-success.voteaverage_1{
+    width: 100px;
+}
+
+p.btn.btn-danger.voteaverage_1 {
+    width: 100px;
+}
+
+svg.bi.bi-star-fill_1 {
+    margin-bottom: 5px;
+    margin-left: 9px;
+}
+
+svg.bi.bi-people-fill {
+    margin-left: 10px;
+    margin-bottom: 3px;
+}
+
+p.btn.btn-info.popu {
+    width: 100px;
+}
+
+p.btn.btn-warning.popu{
+    width: 100px;
+}
+
+svg.bi.bi-person-fill_1 {
+    margin-left: 10px;
+    margin-bottom: 4px;
 }

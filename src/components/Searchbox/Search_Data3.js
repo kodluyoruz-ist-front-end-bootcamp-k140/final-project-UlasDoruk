@@ -2,6 +2,7 @@ import React, { useContext,useEffect, useState } from "react";
 import FavoriteContext from "../../Context/AddFavorite";
 import ShowMovieContext from "../../Context/ShowMovie";
 import { NavLink } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 function Searchbox({ placeholder }) {
   const [popularData, setPopularData] = useState([]);
@@ -65,13 +66,7 @@ function Searchbox({ placeholder }) {
                       <p className="card-text">
                         {truncateOverview(item.overview, 150)}
                       </p>
-                      <p className="card-text_2" style={{ color: "red" }}>
-                        Popularity : {Math.ceil(item.popularity)}
-                        <br />
-                        Vote Avg. : {item.vote_average}
-                        <br />
-                        Vote Count : {item.vote_count}
-                      </p>
+                      <Footer item={item} />
                     </div>
                   </div>
                 </div>

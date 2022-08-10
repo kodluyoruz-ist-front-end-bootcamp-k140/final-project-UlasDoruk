@@ -3,6 +3,7 @@ import "../Searchbox/Searchbox.css"
 import FavoriteContext from '../../Context/AddFavorite'
 import { NavLink } from 'react-router-dom'
 import ShowMovieContext from '../../Context/ShowMovie'
+import Footer from '../Footer/Footer'
 
 function Searchbox({placeholder}) {
   const [popularData, setPopularData] = useState([]);
@@ -54,7 +55,7 @@ function Searchbox({placeholder}) {
                         className="card-img-top"
                         src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`}
                         alt="Card image cap"
-                        onClick={()=>showMovie(item)}
+                        onClick={() => showMovie(item)}
                       ></img>
                     </NavLink>
                     <div className="card-body">
@@ -66,15 +67,7 @@ function Searchbox({placeholder}) {
                       <p className="card-text">
                         {truncateOverview(item.overview, 150)}
                       </p>
-                      <div className="container">
-                        <p className="card-text_2" style={{ color: "red" }}>
-                          Popularity : {Math.ceil(item.popularity)}
-                          <br />
-                          Vote Avg. : {item.vote_average}
-                          <br />
-                          Vote Count : {item.vote_count}
-                        </p>
-                      </div>
+                     <Footer item={item}/>
                     </div>
                   </div>
                 </div>
