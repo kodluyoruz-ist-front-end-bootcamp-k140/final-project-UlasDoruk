@@ -2,11 +2,24 @@
     margin-top: 20px;
 }
 .card-text {
-    width: 270px;
     height: 140px;
     margin-top: 20x;
+    background-color: dimgrey;
+    border-radius: 10px;
+    color: blanchedalmond;
+    padding: 10px;
 }
 
 .col-3 {
     margin-block-end: 13px;
+}
+
+.card-body {
+    background-color: slategray;
+}
+
+.card-body.fav {
+    background-color: slategray;
+    margin-right: -12px;
+    margin-left: -12px;
 }

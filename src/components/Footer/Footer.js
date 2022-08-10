@@ -1,9 +1,10 @@
 import React from 'react'
+import "./Footer.css"
 
 function Footer({item}) {
   return (
     <div>
-      <div className="container">
+      <div className="container footer">
         <p
           className={`btn btn-${
             item.vote_average > 7 ? "success" : "danger"

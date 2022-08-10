@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import FavoriteContext from "../../Context/AddFavorite";
 import Deletebtn from "../Button/DeleteFavbtn";
+import Footer from "../Footer/Footer"
 
 function Favorite() {
   const { favorite } = useContext(FavoriteContext);
@@ -29,7 +30,7 @@ function Favorite() {
                     alt="Card image cap"
                   ></img>
                 </NavLink>
-                <div className="card-body">
+                <div className="card-body fav">
                   <strong>
                     <h4 className="card-title">
                       {truncateOverview(item.original_title, 15)}
@@ -38,16 +39,11 @@ function Favorite() {
                   <p className="card-text">
                     {truncateOverview(item.overview, 150)}
                   </p>
-                  <div className="container">
-                    <p className="card-text_2" style={{ color: "red" }}>
-                      Popularity : {Math.ceil(item.popularity)}
-                      <br />
-                      Vote Avg. : {item.vote_average}
-                      <br />
-                      Vote Count : {item.vote_count}
-                    </p>
-                  </div>
-                  <div className="card-footer" onClick={() => removefav(item.id)}>
+                  {/* <Footer/> */}
+                  <div
+                    className="card-footer"
+                    onClick={() => removefav(item.id)}
+                  >
                     <Deletebtn />
                   </div>
                 </div>
