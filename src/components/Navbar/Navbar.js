@@ -2,9 +2,11 @@ import { useContext } from "react";
 import {  NavLink } from "react-router-dom";
 import FavoriteContext from "../../Context/AddFavorite";
 import "../Navbar/Navbar.css";
+import {useDocTitle} from "../Title/Title"
 
 function Navbar() {
 
+  const [doctitle, setDocTitle] = useDocTitle("MOVIEZZZ");
   const {favorite} = useContext(FavoriteContext)
 
   return (
@@ -14,6 +16,7 @@ function Navbar() {
           className="navbar-brand"
           style={{ color: "white", margin: "10px" }}
           to="/"
+          onClick={() => setDocTitle("MOVIEZZZ")}
         >
           MOVIEZZZ{" "}
           <svg
@@ -28,13 +31,21 @@ function Navbar() {
           </svg>
         </NavLink>
         <NavLink to={"/popular"} style={{ color: "", textDecoration: "" }}>
-          <button className="btn btn-warning">Popular</button>
+          <button
+            className="btn btn-warning"
+            onClick={() => setDocTitle("POPULAR MOVIES")}
+          >
+            Popular
+          </button>
         </NavLink>
         <NavLink
           to={"/favorite"}
           style={{ color: "inherit", textDecoration: "none" }}
         >
-          <button className="btn btn-success">
+          <button
+            className="btn btn-success"
+            onClick={() => setDocTitle("FAVORITES")}
+          >
             Favorite
             <span className="span" style={{ color: "silver" }}>
               {favorite.length}

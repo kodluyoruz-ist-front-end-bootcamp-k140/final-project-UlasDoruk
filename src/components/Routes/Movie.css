@@ -5,12 +5,6 @@
     margin-left: 50px;
 }
 
-h1.card-title {
-    color:darkslategray;
-    text-transform: uppercase;
-    margin-left: 100px;
-}
-
 .card-body.showmovie {
     position: absolute;
     margin-left: 460px;
@@ -38,9 +32,7 @@ h1.card-title {
 }
 
 .favbtn {
-    width: -10px;
     margin-top: 20px;
-    margin-left: 110px;
 }
 
 p.btn.btn-danger.voteaverage {
