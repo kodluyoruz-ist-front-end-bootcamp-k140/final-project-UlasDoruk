@@ -1,0 +1,43 @@
+input#exampleInputPassword1 {
+    width: 400px;
+    margin-inline: 34%;
+}
+
+input#exampleInputEmail1 {
+    width: 400px;
+    margin-inline: 34%;
+}
+
+form.form {
+    margin-top: 100px;
+    width: 1300px;
+    background-color: currentColor;
+    border-radius: 10px;
+    height: 600px;
+}
+
+button.btn.btn-warning.submit {
+    margin-top: 40px;
+    margin-left: 140px;
+}
+
+.form-group {
+    padding-top: 16%;
+    padding-left: 37%;
+}
+
+.moria {
+    width: 590px;
+    height: 600px;
+    position: absolute;
+    margin-inline: -34%;
+    border-radius: 10px;
+}
+
+h2.formtext {
+    color: dodgerblue;
+    margin-inline: 10%;
+    padding-left: 125px;
+    padding-bottom: 20px;
+    font-family: fantasy;
+}

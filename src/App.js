@@ -10,6 +10,7 @@ import Data_4 from "./components/Data/Data_4";
 import Data_5 from "./components/Data/Data_5";
 import Movie from "./components/Routes/Movie";
 import Error from "./components/Routes/NotFound"
+import Login from "./components/Routes/Login"
 import { Theme } from './components/Theme/Theme';
 import { AddFavorite } from './Context/AddFavorite';
 import { ShowMovie } from './Context/ShowMovie';
@@ -25,6 +26,7 @@ function App() {
           <Theme>
             <Routes>
               <Route path="/" element={<Data />}></Route>
+              <Route path="/login" element={<Login />}></Route>
               <Route path="/Popular" element={<Popular />}></Route>
               <Route path="/Favorite" element={<Favorite />}></Route>
               <Route path="/page_2" element={<Data_2 />}></Route>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useDocTitle = (title) => {
+const UseDocTitle = (title) => {
   const [doctitle, setDocTitle] = useState(title);
 
   useEffect(() => {
@@ -10,4 +10,4 @@ const useDocTitle = (title) => {
   return [doctitle, setDocTitle];
 };
 
-export { useDocTitle };
+export { UseDocTitle };

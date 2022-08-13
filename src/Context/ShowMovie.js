@@ -3,6 +3,7 @@ import { createContext, useState } from "react";
 const ShowMovieContext = createContext();
 
 export function ShowMovie({ children }) {
+
   const [movie, setMovie] = useState([]);
 
   const showMovie = (item) => {
