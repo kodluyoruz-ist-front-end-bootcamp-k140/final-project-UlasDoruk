@@ -9,7 +9,7 @@ function Themebtn() {
 
     const {theme,setTheme} = useContext(ThemeContext)
 
-     toast(theme === "light" ? "The Light Side" : "Welcome to Dark Side", {
+     toast(theme === "light" ? "The Light Side" : "The Dark Side", {
       icon : (theme === "light" ? <FaJedi/> : <FaEmpire/> ),
        style: {
          borderRadius: "10px",

@@ -6,6 +6,7 @@ import {UseDocTitle} from "../Title/Title"
 import {useSelector,useDispatch} from "react-redux"
 import {sıgnout} from "../../Firebase/Firebase"
 import {logout as logoutHandle} from "../../store/auth"
+import toast from "react-hot-toast";
 
 function Navbar() {
 
@@ -48,11 +49,14 @@ function Navbar() {
         <NavLink to={"/Login"} style={{ color: "", textDecoration: "" }}>
           <button className="btn login" onClick={() => setDocTitle("Login")}>
             {user ? (
-              <p style={{ color: "white" }} onClick={handleLogout}>
+              <p
+                style={{ color: "white" }}
+                onClick={ handleLogout}
+              >
                 LOGOUT
               </p>
             ) : (
-              <p style={{ color: "white" }}>LOGIN</p>
+              <p style={{ color: "white" }} >LOGIN</p>
             )}
           </button>
         </NavLink>
