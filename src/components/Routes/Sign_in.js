@@ -1,30 +1,31 @@
-import "./Login.css";
-import argonath from "./argonath.jpg";
-import { login } from "../../Firebase/Firebase";
+import "./Sign_in.css"
+import image from "./Doors of Moria_2.jpg"
+import { register } from "../../Firebase/Firebase"
 import { useState } from "react";
-import { Toaster } from "react-hot-toast";
-import {useNavigate} from "react-router-dom"
+import {Toaster} from "react-hot-toast"
+import { useNavigate } from "react-router-dom";
 
 function Login() {
 
-  const navigate = useNavigate()  
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate()
+  const [email,setEmail] = useState("")
+  const [password,setPassword] = useState("")
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = await login(email, password);
-    if(user){
-        navigate("/", { replace: true });
-    }};
+    const user = await register(email, password);
+    if (user) {
+      navigate("/", { replace: true });
+    }
+  };
 
   return (
     <div className="container">
-      <img className="argonath" src={argonath}></img>
+      <img className="moria" src={image}></img>
       <form className="form" onSubmit={handleSubmit}>
         <div class="form-group">
           <h2 className="formtext">
-            MEA GOVANNEN
+            SPEAK FRIEND AND ENTER{" "}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="30"
@@ -63,9 +64,9 @@ function Login() {
         </div>
       </form>
 
-      <Toaster />
+      <Toaster/>
     </div>
   );
 }
 
-export default Login;
+export default Login

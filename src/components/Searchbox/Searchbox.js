@@ -67,7 +67,7 @@ function Searchbox({placeholder}) {
                       <p className="card-text">
                         {truncateOverview(item.overview, 150)}
                       </p>
-                     <Footer item={item}/>
+                     <Footer item={item} />
                     </div>
                   </div>
                 </div>

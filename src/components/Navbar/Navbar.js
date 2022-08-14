@@ -1,11 +1,12 @@
 import { useContext } from "react";
-import {  NavLink } from "react-router-dom";
+import {  NavLink,useNavigate} from "react-router-dom";
 import FavoriteContext from "../../Context/AddFavorite";
 import "../Navbar/Navbar.css";
 import {UseDocTitle} from "../Title/Title"
 
 function Navbar() {
 
+  const navigate = useNavigate()
   const [doctitle, setDocTitle] = UseDocTitle("MOVIEZZZ");
   const {favorite} = useContext(FavoriteContext)
 
@@ -30,12 +31,14 @@ function Navbar() {
             <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" />
           </svg>
         </NavLink>
-        <NavLink to={"/login"} style={{ color: "", textDecoration: "" }}>
-          <button
-            className="btn login"
-            onClick={() => setDocTitle("LOGIN")}
-          >
-            <p style={{ color: "white" }}>ENTRANCE</p>
+        <NavLink to={"/Login"} style={{ color: "", textDecoration: "" }}>
+          <button className="btn login" onClick={() => setDocTitle("Login")}>
+            <p style={{ color: "white" }}>LOGIN</p>
+          </button>
+        </NavLink>
+        <NavLink to={"/Signin"} style={{ color: "", textDecoration: "" }}>
+          <button className="btn signin" onClick={() => setDocTitle("Sign in")}>
+            <p style={{ color: "white" }}>REGISTER</p>
           </button>
         </NavLink>
         <NavLink to={"/popular"} style={{ color: "", textDecoration: "" }}>
