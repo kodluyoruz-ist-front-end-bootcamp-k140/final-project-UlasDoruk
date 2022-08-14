@@ -3,12 +3,25 @@ import {  NavLink,useNavigate} from "react-router-dom";
 import FavoriteContext from "../../Context/AddFavorite";
 import "../Navbar/Navbar.css";
 import {UseDocTitle} from "../Title/Title"
+import {useSelector,useDispatch} from "react-redux"
+import {sıgnout} from "../../Firebase/Firebase"
+import {logout as logoutHandle} from "../../store/auth"
 
 function Navbar() {
 
+  const dispatch = useDispatch()
+  const {user} = useSelector(state =>state.auth)
   const navigate = useNavigate()
   const [doctitle, setDocTitle] = UseDocTitle("MOVIEZZZ");
   const {favorite} = useContext(FavoriteContext)
+
+  const handleLogout = async ()=>{
+    await sıgnout()
+    dispatch(logoutHandle())
+    navigate = ("login",{
+      replace : true
+    })
+  }
 
   return (
     <div>
@@ -31,13 +44,26 @@ function Navbar() {
             <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z" />
           </svg>
         </NavLink>
+        {user ? <h2 className="btn btn-light user">{user.email}</h2> : ""}
         <NavLink to={"/Login"} style={{ color: "", textDecoration: "" }}>
           <button className="btn login" onClick={() => setDocTitle("Login")}>
-            <p style={{ color: "white" }}>LOGIN</p>
+            {user ? (
+              <p style={{ color: "white" }} onClick={handleLogout}>
+                LOGOUT
+              </p>
+            ) : (
+              <p style={{ color: "white" }}>LOGIN</p>
+            )}
           </button>
         </NavLink>
-        <NavLink to={"/Signin"} style={{ color: "", textDecoration: "" }}>
-          <button className="btn signin" onClick={() => setDocTitle("Sign in")}>
+        <NavLink
+          to={user ? "" : "/Signin"}
+          style={{ color: "", textDecoration: "" }}
+        >
+          <button
+            className={`btn ${user ? " signinop" : " signin"}`}
+            onClick={() => setDocTitle("Sign in")}
+          >
             <p style={{ color: "white" }}>REGISTER</p>
           </button>
         </NavLink>
@@ -49,15 +75,18 @@ function Navbar() {
             <p style={{ color: "white" }}> POPULAR</p>
           </button>
         </NavLink>
-        <NavLink to={"/favorite"} style={{ color: "", textDecoration: "" }}>
+        <NavLink
+          to={user ? "/favorite" : ""}
+          style={{ color: "", textDecoration: "" }}
+        >
           <button
-            className="btn btn-success showfav"
+            className={`btn btn-success${user ? " showfav" : " opacity"}`}
             onClick={() => setDocTitle("FAVORITES")}
           >
             <p style={{ color: "white" }} className="showfav">
               FAVORITE
               <span className="span" style={{ color: "silver" }}>
-                {favorite.length}
+                {user ? favorite.length : ""}
               </span>
             </p>
           </button>

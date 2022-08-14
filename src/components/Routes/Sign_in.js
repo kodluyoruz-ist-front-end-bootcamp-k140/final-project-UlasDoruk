@@ -4,9 +4,13 @@ import { register } from "../../Firebase/Firebase"
 import { useState } from "react";
 import {Toaster} from "react-hot-toast"
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login as loginHandle } from "../../store/auth";
+
 
 function Login() {
 
+  const dispatch = useDispatch();  
   const navigate = useNavigate()
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
@@ -14,6 +18,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await register(email, password);
+    dispatch(loginHandle(user));
     if (user) {
       navigate("/", { replace: true });
     }

@@ -4,9 +4,11 @@ import "./Movie.css"
 import Favbtn from "../Button/Favbtn"
 import FavoriteContext from '../../Context/AddFavorite'
 import DeleteFavbtn from "../Button/DeleteFavbtn"
+import { useSelector } from "react-redux";
 
 function Movie() {
 
+  const { user } = useSelector((state) => state.auth);
   const {favorite} = useContext(FavoriteContext)
   const {movie} = useContext(ShowMovieContext)
   const {addFavorite} = useContext(FavoriteContext)
@@ -70,8 +72,10 @@ function Movie() {
               </svg>
             </p>
           </h3>
-
-          <div className="favbtn" onClick={() => addFavorite(movie, findfav)}>
+          <div
+            className={user ? " favbtn" : " favbtnop"}
+            onClick={() => addFavorite(movie, findfav)}
+          >
             {findfav ? <DeleteFavbtn /> : <Favbtn />}
           </div>
         </div>
