@@ -15,7 +15,8 @@
 
  - You can log in with your email and password. If you don't, can't reach the "FAVORITE" button, furthermore if you log in or register to the database, the "REGISTER" button disappears. At the same time, happening "LOGIN" button turns into the "LOGOUT" button.
 
-    1.  <img src="../" alt="Employee data" title="Employee Data title">
+    1.  
+    2. 
 
  - Suggested view 1920px x 635px :desktop_computer:
 
