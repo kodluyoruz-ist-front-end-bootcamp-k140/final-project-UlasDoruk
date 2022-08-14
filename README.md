@@ -13,10 +13,12 @@
     - :email: E-mail : example@hotmail.com
     - :old_key: Password : 123123
 
- - You can login with email and password. If you dont, cant reach the "FAVORITE" button. 
-   Furthermore if you login or registered to database, "REGISTER" button disappears. While its happening
-   "LOGIN" button turns to "LOGOUT" button.
+ - You can log in with your email and password. If you don't, can't reach the "FAVORITE" button, furthermore if you log in or register to the database, the "REGISTER" button disappears. At the same time, happening "LOGIN" button turns into the "LOGOUT" button.
 
- - Suggested view 1920px x 635px
+    1.  <img src="../" alt="Employee data" title="Employee Data title">
+
+ - Suggested view 1920px x 635px :desktop_computer:
 
 # Created by Ulaş Doruk Karaman :rhinoceros:
+
+### Contact with me udk97@hotmail.com
