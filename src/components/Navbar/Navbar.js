@@ -46,55 +46,54 @@ function Navbar() {
           </svg>
         </NavLink>
         {user ? <h2 className="btn btn-light user">{user.email}</h2> : ""}
-        <NavLink to={"/Login"} style={{ color: "", textDecoration: "" }}>
-          <button className="btn login" onClick={() => setDocTitle("Login")}>
-            {user ? (
-              <p
-                style={{ color: "white" }}
-                onClick={ handleLogout}
-              >
-                LOGOUT
+        <div className="navbarbtns">
+          <NavLink to={"/Login"} style={{ color: "", textDecoration: "" }}>
+            <button className="btn login" onClick={() => setDocTitle("Login")}>
+              {user ? (
+                <p style={{ color: "white" }} onClick={handleLogout}>
+                  LOGOUT
+                </p>
+              ) : (
+                <p style={{ color: "white" }}>LOGIN</p>
+              )}
+            </button>
+          </NavLink>
+          <NavLink
+            to={user ? "" : "/Signin"}
+            style={{ color: "", textDecoration: "" }}
+          >
+            <button
+              className={`btn ${user ? " signinop" : " signin"}`}
+              onClick={() => setDocTitle("Sign in")}
+            >
+              <p style={{ color: "white" }}>REGISTER</p>
+            </button>
+          </NavLink>
+          <NavLink to={"/popular"} style={{ color: "", textDecoration: "" }}>
+            <button
+              className="btn btn-warning showpop"
+              onClick={() => setDocTitle("POPULAR MOVIES")}
+            >
+              <p style={{ color: "white" }}> POPULAR</p>
+            </button>
+          </NavLink>
+          <NavLink
+            to={user ? "/favorite" : ""}
+            style={{ color: "", textDecoration: "" }}
+          >
+            <button
+              className={`btn btn-success${user ? " showfav" : " opacity"}`}
+              onClick={() => setDocTitle("FAVORITES")}
+            >
+              <p style={{ color: "white" }} className="showfav">
+                FAVORITE
+                <span className="span" style={{ color: "silver" }}>
+                  {user ? favorite.length : ""}
+                </span>
               </p>
-            ) : (
-              <p style={{ color: "white" }} >LOGIN</p>
-            )}
-          </button>
-        </NavLink>
-        <NavLink
-          to={user ? "" : "/Signin"}
-          style={{ color: "", textDecoration: "" }}
-        >
-          <button
-            className={`btn ${user ? " signinop" : " signin"}`}
-            onClick={() => setDocTitle("Sign in")}
-          >
-            <p style={{ color: "white" }}>REGISTER</p>
-          </button>
-        </NavLink>
-        <NavLink to={"/popular"} style={{ color: "", textDecoration: "" }}>
-          <button
-            className="btn btn-warning showpop"
-            onClick={() => setDocTitle("POPULAR MOVIES")}
-          >
-            <p style={{ color: "white" }}> POPULAR</p>
-          </button>
-        </NavLink>
-        <NavLink
-          to={user ? "/favorite" : ""}
-          style={{ color: "", textDecoration: "" }}
-        >
-          <button
-            className={`btn btn-success${user ? " showfav" : " opacity"}`}
-            onClick={() => setDocTitle("FAVORITES")}
-          >
-            <p style={{ color: "white" }} className="showfav">
-              FAVORITE
-              <span className="span" style={{ color: "silver" }}>
-                {user ? favorite.length : ""}
-              </span>
-            </p>
-          </button>
-        </NavLink>
+            </button>
+          </NavLink>
+        </div>
       </nav>
     </div>
   );
